@@ -45,8 +45,8 @@ SQL code
 <p>(2, 'Tran Quang B', 560000000, '2D'),
 <p>(3, 'Ho Van C', 587000000, '3C'),
 <p>(4, 'Ngo Thi D', 6400000, '2D'),
-<p>(5, 'Le Van E', 64400000, '1T'),
-<p>(6, 'Do Thanh F', 875500000, '3C'),
+<p>(5, 'Bo Doi THien Ha', 64400000, '1T'),
+<p>(6, 'Do Thanh Faker', 875500000, '3C'),
 <p>(7, 'Tran Van G', 80000000, '1T'),
 <p>(8, 'Nguyen Van H', 878000000, '5S');
 
