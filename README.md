@@ -8,20 +8,20 @@ SQL code
 <p>CREATE TABLE tbl_khoa (
 <p>  id INT PRIMARY KEY AUTO_INCREMENT,
 <p> maKhoa VARCHAR(10) NOT NULL,
-<p>  tenKhoa VARCHAR(50) NOT NULL,
+<p>  tenKhoa VARCHAR(30) NOT NULL,
 <p>  sdt VARCHAR(20) NOT NULL
 );
 <p>CREATE TABLE tbl_giangvien (
 <p>  id INT PRIMARY KEY AUTO_INCREMENT,
 <p>  maGV VARCHAR(10)  NOT NULL,
-<p>  tenGV VARCHAR(50) NOT NULL,
+<p>  tenGV VARCHAR(100) NOT NULL,
 <p>  luong INT NOT NULL,
 <p>  maKhoa VARCHAR(10) NOT NULL
 );
 <p>CREATE TABLE tbl_sinhvien (
 <p>  id INT PRIMARY KEY AUTO_INCREMENT,
 <p>  maSV INT NOT NULL,
-<p>  tenSV VARCHAR(50) NOT NULL,
+<p>  tenSV VARCHAR(100) NOT NULL,
 <p>  maKhoa VARCHAR(10) NOT NULL,
 <p>  namSinh INT DEFAULT NULL,
 <p>  queQuan VARCHAR(50)
@@ -59,13 +59,13 @@ SQL code
 <p>('6G', 'GDQP', '0988456632');
 <p>INSERT INTO tbl_sinhvien (maSV, tenSV, maKhoa, namSinh, queQuan) VALUES
 <p>(1, 'Nguyen Van A', '1T', 2002, 'Ha Noi'),
-<p>(2, 'Tran Van B', '2D', 2001, ‘Ha Noi'),
-<p>(3, 'Pham Thi C', '2D', 2002, 'Ha Noi'),
-<p>(4, 'Hoang Van D', '3C', 2002, 'Hai Phong'),
-<p>(5, 'Le Thi E', '1T', 1999, 'Ha Noi'),
-<p>(6, 'Do Van F', '5S', 1999, 'Ha Noi'),
+<p>(2, 'Tran Dai B', '2D', 2001, ‘Ha Noi'),
+<p>(3, 'Pham Van C', '2D', 2002, 'Ha Noi'),
+<p>(4, 'Nguyen Van D', '3C', 2002, 'Hai Phong'),
+<p>(5, 'Le Thi Emin', '1T', 1999, 'Ha Noi'),
+<p>(6, 'Tran Van Faker', '5S', 1999, 'Ha Noi'),
 <p>(7, 'Vo Thi G', '6G', 2000, 'Ha Noi'),
-<p>(8, 'Ngo Van H', '1T', 2002, 'Ha Noi');
+<p>(8, 'Nguyen Duy H', '1T', 2002, 'Ha Noi');
 <p>INSERT INTO tbl_detai (maDT, tenDT, kinhPhi, noiThucTap) VALUES
 <p>('TN', 'Trieu Nguyen', 5000000, 'Ha Noi'),
 <p>('TD', 'Trieu Dinh', 8000000, 'Ha Noi'),
