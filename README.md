@@ -42,13 +42,12 @@ SQL code
 );
 <p>INSERT INTO tbl_giangvien (maGV, tenGV, luong, maKhoa) VALUES
 <p>(1, 'Nguyen Van A', 678989898, '1T'),
-<p>(2, 'Tran Quang B', 560000000, '2D'),
-<p>(3, 'Ho Van C', 587000000, '3C'),
-<p>(4, 'Ngo Thi D', 6400000, '2D'),
+<p>(2, 'ton That Hoc', 560000000, '2D'),
+<p>(3, 'Dong Phuong Bat Bai', 587000000, '3C'),
+<p>(4, 'Doc Co CAu Bai', 6400000, '2D'),
 <p>(5, 'Bo Doi THien Ha', 64400000, '1T'),
-<p>(6, 'Do Thanh Faker', 875500000, '3C'),
-<p>(7, 'Tran Van G', 80000000, '1T'),
-<p>(8, 'Nguyen Van H', 878000000, '5S');
+<p>(6, 'Do Thanh Faker', 875500000, '3C');
+
 
 <p>INSERT INTO tbl_khoa (maKhoa, tenKhoa, sdt) VALUES
 <p>('1T', 'Toan', '099987565'),
