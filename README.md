@@ -86,7 +86,7 @@ SELECT COUNT(*) AS soSinhVien FROM tbl_sinhvien JOIN tbl_khoa ON tbl_sinhvien.ma
 <p>4.
 SELECT tbl_sinhvien.maSV,tbl_sinhvien.tenSV,tbl_sinhvien.namSinh FROM tbl_sinhvien JOIN tbl_khoa ON tbl_sinhvien.maKhoa = tbl_khoa.maKhoa WHERE tbl_khoa.tenKhoa= "Toan";
 <p>5.
-SELECT COUNT(*) AS soGiangVien FROM tbl_giangvien JOIN tbl_khoa ON tbl_giangvien.maKhoa = tbl_khoa.maKhoa WHERE tbl_khoa.tenKhoa= "CNTT";
+SELECT COUNT(*) AS soGV FROM tbl_giangvien JOIN tbl_khoa ON tbl_giangvien.maKhoa = tbl_khoa.maKhoa WHERE tbl_khoa.tenKhoa= "CNTT";
 <p>6.
 SELECT tbl_sinhvien.* FROM tbl_sinhvien LEFT JOIN tbl_huongdan ON tbl_sinhvien.maSV = tbl_huongdan.maSV WHERE tbl_huongdan.maSV IS NULL;
 <p>7.
