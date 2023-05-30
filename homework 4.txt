@@ -88,7 +88,7 @@ GROUP BY tbl_khoa.maKhoa, tbl_khoa.tenKhoa;
 8.
 SELECT tbl_sinhvien.maSV, tbl_sinhvien.hoTen, tbl_huongdan.ketQua FROM tbl_sinhvien
 INNER JOIN tbl_huongdan ON tbl_sinhvien.maSV = tbl_huongdan.maSV
-INNER JOIN tbl_khoa ON tbl_sinhvien.maKhoa = tbl_khoa.maKhoa
+LEFT JOIN tbl_khoa ON tbl_sinhvien.maKhoa = tbl_khoa.maKhoa
 WHERE tbl_khoa.tenKhoa = 'DIALY và QLTN';
 9.
 SELECT maSV, hoTen, YEAR(CURRENT_DATE) - YEAR(namSinh) AS tuoi FROM tbl_sinhvien
