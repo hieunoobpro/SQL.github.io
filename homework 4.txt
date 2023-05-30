@@ -75,7 +75,7 @@ WHERE tbl_giangvien.maGV IN (SELECT maGV FROM tbl_huongdan WHERE COUNT(maSV) >= 
 SELECT * FROM tbl_sinhvien WHERE maSV NOT IN (SELECT maSV FROM tbl_huongdan);
 4.
 SELECT tbl_khoa.sdt FROM tbl_khoa 
-INNER JOIN tbl_khoa ON khoa.maKhoa = tbl_sinhvien.maKhoa WHERE tbl_sinhvien.hoTen = 'Le van son';
+INNER JOIN tbl_khoa ON tbl_khoa.maKhoa = tbl_sinhvien.maKhoa WHERE tbl_sinhvien.hoTen = 'Le van son';
 5.
 SELECT tbl_detai.maDT, tbl_detai.tenDT FROM tbl_detai 
 INNER JOIN tbl_huongdan ON tbl_detai.maDT = tbl_huongdan.maDT HAVING COUNT(DISTINCT tbl_huongdan.maSV) > 2;
