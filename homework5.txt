@@ -1,0 +1,172 @@
+CREATE DATABASE fpt_shop;
+USE fpt_shop;
+CREATE TABLE tbl_nguoidung (
+  id int PRIMARY KEY AUTO_INCREMENT,
+  ten varchar(255),
+  sdt varchar(13),
+  diachi varchar(255),
+  username varchar(100),
+  password varchar(100),
+  email varchar(100),
+  ngayVaoLam date,
+  vaitro_id int,
+  cccd varchar(20),
+  trangThai int,
+  created_at date,
+  updated_at date,
+  deleted_at date,
+  CONSTRAINT fk_tbl_nguoidung_tbl_vaitro  
+  FOREIGN KEY (vaitro_id) REFERENCES tbl_vaitro(id)
+)
+CREATE TABLE tbl_vaitro {
+  id int PRIMARY KEY AUTO_INCREMENT,
+  key varchar(10),
+  tenVaiTro varchar(100),
+  created_at date,
+  updated_at date,
+  deleted_at date
+}
+CREATE Table tbl_luong {
+  id int PRIMARY KEY AUTO_INCREMENT,
+  nhanvien_id integer
+  luongCung float,
+  thuong float,
+  phat float,
+  thue float,
+  soNgayCong float,
+  thang int,
+  trangThai varchar(50),
+  created_at date,
+  updated_at date,
+  deleted_at date,
+  CONSTRAINT fk_luong_nhanvien  
+  FOREIGN KEY (nhanvien_id) REFERENCES tbl_nhanvien(id)
+}
+
+CREATE Table tbl_doanhso {
+  id int PRIMARY KEY AUTO_INCREMENT,
+  nhanvien_id int,
+  soHoaDon int,
+  heSo float,
+  thang integer,
+  trangThai varchar(100),
+  created_at date,
+  updated_at date,
+  deleted_at date,
+  CONSTRAINT fk_doanhso_nhanvien  
+  FOREIGN KEY (nhanvien_id) REFERENCES tbl_nhanvien(id)
+}
+
+CREATE Table tbl_sanpham {
+  id int PRIMARY KEY AUTO_INCREMENT,
+  tenSanPham varchar(200) NUT NULL,
+  soLuong int NOT NULL,
+  gia float NOT NULL,
+  danhmuc_id int,
+  nhacungcap_id int,
+  ngaySanXuat date,
+  moTa varchar(255),
+  trangThai varchar(50),
+  hinhAnh varchar(20),
+  chiTiet varchar(255),
+  thongSo varchar(255),
+  ngayNhap date,
+  created_at date,
+  updated_at date,
+  deleted_at date,
+  CONSTRAINT fk_sanpham_danhmuc  
+  FOREIGN KEY (danhmuc_id) REFERENCES tbl_danhmuc(id),
+  CONSTRAINT fk_sanpham_nhacungcap  
+  FOREIGN KEY (nhacungcap_id) REFERENCES tbl_nhacungcap(id)
+}
+
+CREATE Table tbl_giohang {
+  id int PRIMARY KEY AUTO_INCREMENT,
+  khachhang_id int,
+  trangThai varchar(50),
+  created_at date,
+  updated_at date,
+  deleted_at date,
+  CONSTRAINT fk_giohang_khchhang  
+  FOREIGN KEY (khachang_id) REFERENCES tbl_khachhang(id)
+}
+
+CREATE Table tbl_chitietgiohang {
+  id int PRIMARY KEY AUTO_INCREMENT,
+  giohang_id int,
+  sanpham_id int,
+  soLuong int, 
+  created_at date,
+  CONSTRAINT fk_chitietgiohang_giohang  
+  FOREIGN KEY (giohang_id) REFERENCES tbl_giohang(id),
+  CONSTRAINT fk_chitietgiohang_sanpham  
+  FOREIGN KEY (sanpham_id) REFERENCES tbl_sanpham(id)
+}
+
+CREATE Table tbl_hoadon {
+  id int PRIMARY KEY AUTO_INCREMENT,
+  khachhang_id int,
+  giohang_id int,
+  nhanvien_id int,
+  trangThai varchar(50)
+  ngayLapHD date,
+  diaChi varchar(255),
+  sdt varchar(20),
+  ghiChu varchar(255),
+  created_at date,
+  updated_at date,
+  deleted_at date,
+  CONSTRAINT fk_hoadon_khchhang  
+  FOREIGN KEY (khachang_id) REFERENCES tbl_khachhang(id),
+  CONSTRAINT fk_hoadon_giohang  
+  FOREIGN KEY (giohang_id) REFERENCES tbl_giohang(id),
+  CONSTRAINT fk_hoadon_nhanvien  
+  FOREIGN KEY (nhanvien_id) REFERENCES tbl_nhanvien(id)
+}
+CREATE Table tbl_chitiethoadon {
+  id int PRIMARY KEY AUTO_INCREMENT,
+  giohang_id int,
+  sanpham_id int,
+  soLuong int,
+  donGia float,
+  tenSanPham varchar(100),
+  hinhAnh varchar(20),
+  created_at date
+  CONSTRAINT fk_chitiethoadon_giohang  
+  FOREIGN KEY (giohang_id) REFERENCES tbl_giohang(id),
+  CONSTRAINT fk_chitiethoadon_sanpham  
+  FOREIGN KEY (sanpham_id) REFERENCES tbl_sanpham(id)
+}
+CREATE Table tbl_danhgia {
+  id int PRIMARY KEY AUTO_INCREMENT,
+  sanpham_id int,
+  diemSo float,
+  khachhang_id int,
+  comment varchar(255),
+  trangThai varchar(50),
+  created_at date,
+  updated_at date,
+  deleted_at date,
+  CONSTRAINT fk_danhgia_khchhang  
+  FOREIGN KEY (khachang_id) REFERENCES tbl_khachhang(id)
+}
+CREATE Table nhacungcap {
+  id int PRIMARY KEY AUTO_INCREMENT,
+  tenNCC varchar(100),
+  moTa varchar(255),
+  hinhAnh varchar(20),
+  trangThai varchar(50),
+  created_at date,
+  updated_at date,
+  deleted_at date
+}
+CREATE Table danhmuc {
+  id int PRIMARY KEY AUTO_INCREMENT,
+  tenDanhMuc varchar(100),
+  hinhAnh varchar(20),
+  moTa varchar(255),
+  trangThai varchar(50),
+  created_at date,
+  updated_at date,
+  deleted_at date
+}
