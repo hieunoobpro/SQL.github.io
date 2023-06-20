@@ -1,0 +1,17 @@
+user chia làm admin, teacher, student
+admin có vai trò:
+- Đăng ký học viên và giáo viên (qua tbl_managers_user (status:active/inactive))
+- Quản lý giáo viên và học viên (qua tbl_managers_user)
+- Quản lý khoá học (tbl_managers_class_courses)
+- Quản lý lớp học (tbl_managers_class_courses)
+- Thêm sinh viên vào lớp học (tbl_managers_user)
+teacher có vai trò:
+- Thêm bài giảng cho lớp (tbl_teachers_addCourses, Các course được thêm có thể có trong nhiều lớp)
+- Điểm danh học viên (tbl_students_attendance)
+- Chấm điểm học viên (tbl_students_score)
+Chức năng thêm: Đăng bài viết trên Tẹhmaster
+- Đăng bài (tbl_post)
+- Bình luận (tbl_comment)
+- Thêm ảnh (tbl_image)
+- Like(tbl_like)
+// Còn các bảng trung gian chưa được liệt kê
